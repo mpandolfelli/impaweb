@@ -243,6 +243,55 @@ class Admin extends CI_Controller {
 
 	}
 
+
+	public function uploadImage(){
+
+		
+			
+		$num_archivos = count($_FILES['file']['tmp_name']);
+		$files = $_FILES;
+		
+
+			$fileName = $files['file']['name'];
+			$ext = pathinfo($fileName, PATHINFO_EXTENSION);
+			$newFileName =  pathinfo($fileName, PATHINFO_FILENAME);
+			$file = $this->toAscii($newFileName);
+			$fecha = new DateTime();
+			$finalName = $file.'_'.$fecha->getTimestamp().'.'.$ext;
+
+			$config['file_name'] = $finalName; 
+			$config['upload_path'] = './uploads/notas/';
+			$config['allowed_types'] = 'gif|jpg|png|doc|xls|docx|xlsx|ppt|pptx';
+			$config['max_size']	= '10000';
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			
+			$_FILES['file']['name'] = $finalName;
+			$_FILES['file']['type'] = $files['file']['type'];
+			$_FILES['file']['tmp_name'] = $files['file']['tmp_name'];
+			$_FILES['file']['error'] = $files['file']['error'];
+			$_FILES['file']['size'] = $files['file']['size']; 
+
+			if ( ! $this->upload->do_upload('file')){
+				$error = array('error' => $this->upload->display_errors());
+
+				print_r($error);
+				die();
+			}else{
+					
+				$image['location'] = base_url().'uploads/notas/'.$finalName;
+
+				echo json_encode($image);	
+				}
+				
+			
+		
+			
+
+		
+
+	}
+
 	public function contactos(){
 		
 		$data['user_id']	= $this->tank_auth->get_user_id();

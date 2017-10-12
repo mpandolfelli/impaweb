@@ -12,7 +12,7 @@
 		   image_caption: true,
 		   file_browser_callback_types: 'image',
 		   automatic_uploads: false,
-		    images_upload_url: '<?=base_url();?>admin/upload',
+		    images_upload_url: '<?=base_url();?>admin/uploadImage',
 		    file_picker_callback: function(cb, value, meta) {
 		    var input = document.createElement('input');
 		    input.setAttribute('type', 'file');
@@ -58,6 +58,11 @@
     '//www.tinymce.com/css/codepen.min.css'
   ]
 });
+	tinymce.activeEditor.uploadImages(function(success) {
+	  $.post('<?=base_url();?>admin/uploadImage', tinymce.activeEditor.getContent()).done(function() {
+	    console.log("Uploaded images and posted content as an ajax request.");
+	  });
+	});
 </script>
 <?php echo add_jscript('jquery.multi-select');?>   
 <?php echo add_style('multi-select');?>  
