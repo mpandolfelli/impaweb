@@ -2,10 +2,17 @@
 <script>
 	tinymce.init({
 		relative_urls: false,
-  selector: '#wishiwi',
-  height: 500,
+		  selector: '#wishiwi',
+		  height: 500,
+		  
+		   image_caption: true,
+		   file_browser_callback_types: 'image',
+		   automatic_uploads: false,
+		    images_upload_url: '<?=base_url();?>admin/uploadImage',
+		    
+    
   plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
+        "advlist autolink lists link image charmap print preview anchor image paste",
         "searchreplace visualblocks code fullscreen",
         "insertdatetime media table contextmenu paste imagetools"
     ],
@@ -15,6 +22,7 @@
     '//www.tinymce.com/css/codepen.min.css'
   ]
 });
+	
 </script>
 <?php echo add_jscript('jquery.multi-select');?>   
 <?php echo add_style('multi-select');?>  
@@ -54,8 +62,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h4>Copete</h4>
-						<hr>
+						
 						<textarea class="form-control"  name="description"><?=$seccion->description?></textarea>
+						<hr>
 					</div>
 				</div>
 				<div class="row">

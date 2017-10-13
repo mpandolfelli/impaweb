@@ -261,7 +261,7 @@ class Admin extends CI_Controller {
 
 			$config['file_name'] = $finalName; 
 			$config['upload_path'] = './uploads/notas/';
-			$config['allowed_types'] = 'gif|jpg|png|doc|xls|docx|xlsx|ppt|pptx';
+			$config['allowed_types'] = 'gif|jpg|jpeg';
 			$config['max_size']	= '10000';
 			$this->load->library('upload', $config);
 			$this->upload->initialize($config);

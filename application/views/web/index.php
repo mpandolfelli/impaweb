@@ -14,7 +14,19 @@
        			<hr>
               </div>
              
-              <div class="box-principal-mas"><a href="<?=base_url();?>profesorados">Ver mas..</a></div>
+              <div class="box-principal-mas">
+
+                 <div class="box-principal-mas">
+
+                    <div class="pull-left">
+                       <a href="<?=base_url();?>profesorados" class="" >Ver más</a>    
+                    </div>
+                    <div class="pull-right">
+                       <a href="<?=base_url();?>profesorados" class="" ><span class="glyphicon glyphicon-chevron-right"></span></a>   
+                    </div>
+
+                    </div>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
@@ -26,8 +38,17 @@
                       <p>Calendario académico. Enterate de todas las novedades</p>
                       <hr>
                     </div>
-                   
-                    <div class="box-principal-mas">Ver mas..</div>
+                    
+                    <div class="box-principal-mas">
+
+                      <div class="pull-left">
+                         <a href="<?=base_url();?>" class="" >Ver más</a>    
+                      </div>
+                      <div class="pull-right">
+                         <a href="<?=base_url();?>" class="" ><span class="glyphicon glyphicon-chevron-right"></span></a>   
+                      </div>
+
+                      </div>
                   </div>
               </div>
                <div class="col-md-6">
@@ -41,7 +62,16 @@
                       	<hr>
                     </div>
                    
-                    <div class="box-principal-mas"><a href="<?=base_url();?>institucion">Ver mas..</a></div>
+                    <div class="box-principal-mas">
+
+                      <div class="pull-left">
+                         <a href="<?=base_url();?>" style="color:#fff" >Ver más</a>    
+                      </div>
+                      <div class="pull-right">
+                         <a href="<?=base_url();?>" style="color:#fff" ><span class="glyphicon glyphicon-chevron-right"></span></a>   
+                      </div>
+
+                      </div>
                   </div>
               </div>
             </div>
@@ -54,7 +84,14 @@
                       <hr>
                     </div>
                    
-                    <div class="box-principal-mas"><a href="<?=base_url();?>eventos">Ver mas..</a></div>
+                    <div class="box-principal-mas">
+                      <div class="pull-left">
+                         <a href="<?=base_url();?>" class="" >Ver más</a>    
+                      </div>
+                      <div class="pull-right">
+                         <a href="<?=base_url();?>" class="" ><span class="glyphicon glyphicon-chevron-right"></span></a>   
+                      </div>
+                    </div>
                   </div>
                  
               </div>
@@ -78,11 +115,28 @@
   				<? } ?>
   				<div class="related-post-content"><?=substr($post->description, 0, 200);?>...</div>	
   				<div class="post-info">
-  					<a href="<?=$post->url;?>" class="btn-mas" >ver más</a>		
+            <div class="pull-left">
+               <a href="<?=$post->url;?>" class="" >ver más</a>    
+            </div>
+            <div class="pull-right">
+  					   <a href="<?=$post->url;?>" class="" ><span class="glyphicon glyphicon-chevron-right"></span></a>		
+            </div>
+
   				</div>
   			</div>
   		<? } ?>
   	</div>
+  </div>
+</div>
+
+<div class="container-fluid bg-gris">
+
+  <div class="container section">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Inscribite</h2>
+        <img src="http://via.placeholder.com/920x150" width="100%"></div>
+    </div>
   </div>
 </div>
    

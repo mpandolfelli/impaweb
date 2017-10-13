@@ -1,28 +1,36 @@
 <div class="container-fluid bg-blanco">
-<div class="container nota">
-	<div class="row breadcrumbs">
-		<div class="col-md-12">
-			<ol class="breadcrumb">
-			  <li><a href="<?=base_url();?>">Inicio</a></li>
-			  <li><a href="<?=base_url();?>notas">Notas</a></li>
-			  <li class="active"><?=$section->page_title;?></li>
-			</ol>
+	<div class="container nota">
+		
+		<div class="row border-nota-title hidden-sm hidden-xs visible-md visible-lg">
+			<div class="col-md-1"><img src="<?=base_url();?>uploads/<?=$section->avatar;?>" alt="" class="img-circle" width="80" height="80"></div>
+			<div class="col-md-10">
+				<h2><?=$section->page_title;?></h2>
+				<p class="nota-info">Publicado el <?=$section->registered;?> por  <?=$section->username;?></p>
+			</div>
 		</div>
-	</div>
-	<div class="row border-nota-title">
-		<div class="col-md-1 col-xs-3"><img src="<?=base_url();?>uploads/<?=$section->avatar;?>" alt="" class="img-circle" width="80" height="80"></div>
-		<div class="col-md-10 col-xs-9">
-			<h2><?=$section->page_title;?></h2>
-			<p class="nota-info">Publicado el <?=$section->registered;?> por  <?=$section->username;?></p>
+
+		<div class="row border-nota-title hidden-lg hidden-md visible-sm visible-xs">
+			
+			<div class="col-md-12">
+				<h2><?=$section->page_title;?></h2>
+				<p class="nota-info" style="margin-top:20px"><img src="<?=base_url();?>uploads/<?=$section->avatar;?>" alt="" class="img-circle" width="30" height="30"> Publicado el <?=$section->registered;?> por  <?=$section->username;?></p>
+			</div>
 		</div>
+		<div class="row breadcrumbs">
+			<div class="col-md-12">
+				<ol class="breadcrumb">
+				  <li><a href="<?=base_url();?>">Inicio</a></li>
+				  <li><a href="<?=base_url();?>notas">Notas</a></li>
+				  <li class="active"><?=$section->page_title;?></li>
+				</ol>
+			</div>
+		</div>
+		
+		<? if($section->image != ''){ ?>
+			<div class="post-image" style="background-image:url(<?=$section->image;?>)"></div>
+		<? } ?>
+		<div class="nota-contenido"><?=$section->page_content;?></div>
 	</div>
-	
-	
-	<? if($section->image != ''){ ?>
-		<div class="post-image" style="background-image:url(<?=$section->image;?>)"></div>
-	<? } ?>
-	<div><?=$section->page_content;?></div>
-</div>
 
 
 </div>
